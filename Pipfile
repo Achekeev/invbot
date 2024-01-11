@@ -1,0 +1,26 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+sqlalchemy = "*"
+python-dotenv = "*"
+aiosqlite = "*"
+aiogram = "*"
+babel = "*"
+nanoid = "*"
+greenlet = "*"
+aiodns = "*"
+aiogram-dialog = "*"
+aiocsv = "*"
+aiomysql = "*"
+cryptography = "*"
+redis = {extras = ["hiredis"], version = "*"}
+aiohttp-remotes = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.11"
+python_full_version = "3.11.6"

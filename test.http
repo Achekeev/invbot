@@ -1,0 +1,35 @@
+POST https://demo.bithide.io:8645/Address/GetAddress
+Content-Type: application/json
+
+{
+    "ExternalId": "1",
+    "Currency": "USDT-TRC20",
+    "New": true,
+    "ExpectedAmount": 10,
+    "PublicKey": "z13ovzyQ0yu/EfaTKXHc1Q=="
+}
+
+####
+POST http://localhost:8011/bithide
+Content-Type: application/application/json
+
+{
+    "id": "test"
+}
+
+####
+POST https://demo.bithide.io:8645/Transaction/Withdraw
+Content-Type: application/json
+
+{
+    "AdditionalInfo": "serg_2",
+    "Amount": 0.000001,
+    "CallbackLink": "https://2499-37-45-206-182.ngrok-free.app/bithide",
+    "Comment": "serg_2 payout",
+    "Currency": "BTC",
+    "DestinationAddress": "tb1qatxsz684le0wxtprsujdyz9cvclyl3xuskpav4",
+    "IsSenderCommision": true,
+    "PublicKey": "z13ovzyQ0yu/EfaTKXHc1Q==",
+    "RequestId": "3",
+    "SourceAddress": "tb1qtfjv3ldfexqwruu0sm9wz4wcvud0c80xte6cfs"
+}
