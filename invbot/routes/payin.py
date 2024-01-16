@@ -10,6 +10,7 @@ from aiogram_dialog import Window, Dialog, DialogManager, StartMode
 from aiogram_dialog.widgets.text import Const, Format
 from aiogram_dialog.widgets.kbd import Select, ScrollingGroup, SwitchTo
 from aiogram_dialog.widgets.input import MessageInput
+from aiogram.filters.command import Command
 import aiohttp
 from ..db.models import Setting, User, Transaction
 from ..db.repo import ExtRepo, TransactionRepo
@@ -226,7 +227,7 @@ cache_receipt_win = Window(
 
 dialog = Dialog(ext_win, currency_select_win, amount_input_win, cache_info_win, cache_receipt_win)
 
-#@router.message(Command('payin'))
+@router.message(Command('payin'))
 async def payin_cmd(msg: Message, state: FSMContext, dialog_manager: DialogManager, command: CommandObject, session: AsyncSession, user: User):
     logger.info('command: payin')
 

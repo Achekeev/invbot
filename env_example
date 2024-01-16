@@ -1,0 +1,7 @@
+BOT_TOKEN=6250578342:AAH2-W48XL0pVFN6b7-vtI1k49vg-66wleY
+DB_URL=mysql+aiomysql://invbot:invbot@127.0.0.1:3306/invbot
+REDIS_URL=redis://localhost
+BITHIDE_PUBLIC_KEY=St8RSANJXr3SBY1RVEvnoA==
+BITHIDE_CALLBACK_URL=https://lucky-ram-highly.ngrok-free.app/bithide
+BITHIDE_PAYOUT_WALLET=TKtZZWwFVPBHMFDoCWXtwrig5TeLZhrZed
+WEBHOOK_URL=https://lucky-ram-highly.ngrok-free.app

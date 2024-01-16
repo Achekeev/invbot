@@ -7,10 +7,12 @@ from aiogram.utils.i18n import gettext as _
 from aiogram.fsm.context import FSMContext
 from aiogram.fsm.state import State, StatesGroup
 from aiogram_dialog import DialogManager
+from aiogram.filters.command import Command
 from ..db import AsyncSession
 from ..db.models import User
 from ..messages import messages
 from .common import add_ext_ids
+from invbot.filters import UserFilter
 
 logger = logging.getLogger(__name__)
 
@@ -57,7 +59,8 @@ def create_message(user: User):
         'reply_markup': keyboard
     }
 
-#@router.message(Command('settings'), UserFilter(F.status==User.Status.ACTIVE))
+# @router.message(Command('settings'), UserFilter(F.status==User.Status.ACTIVE))
+@router.message(Command('settings'))
 async def settings_cmd(msg: Message, state: FSMContext, user: User|None, dialog_manager: DialogManager):
     logger.info('command: settings')
 

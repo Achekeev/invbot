@@ -1,0 +1,14 @@
+sqlalchemy
+python-dotenv
+aiosqlite
+aiogram
+babel
+nanoid
+greenlet
+aiodns
+aiogram-dialog
+aiocsv
+aiomysql
+cryptography
+redis
+aiohttp-remotes

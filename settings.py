@@ -6,7 +6,7 @@ dotenv.load_dotenv()
 
 DEV = True
 
-REVERSE_PROXIES   = [['127.0.0.1']]
+REVERSE_PROXIES   = [['127.0.0.1', '::1']]
 WHITE_PATHS       = ['/bithide']
 BITHIDE_SERVER_IP = ['127.0.0.1', '::1']
 
@@ -40,7 +40,7 @@ LOGLEVEL      = env.get('LOGLEVEL', 'INFO')
 SQL_LOG_LEVEL = env.get('LOGLEVEL', 'WARN')
 
 # predefined admins (not implemented)
-ADMINS_CHAT_ID = None
+ADMINS_CHAT_ID = env.get("ADMINS_CHAT_ID")
 
 # Pause per message for bulk send (broadcasts)
 BCAST_PAUSE = 0.2

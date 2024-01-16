@@ -12,6 +12,7 @@ from aiogram.types import (
     InlineKeyboardMarkup,
     InlineKeyboardButton
 )
+from aiogram.filters.command import CommandStart
 from aiogram.fsm.context import FSMContext
 from aiogram.fsm.state import State, StatesGroup
 from aiogram.utils.i18n import gettext as _
@@ -34,7 +35,7 @@ class StartState(StatesGroup):
     ext_ids = State()
 
 
-#@router.message(CommandStart())
+@router.message(CommandStart())
 async def start_cmd(msg: Message, state: FSMContext, dialog_manager: DialogManager):
     logger.debug('/start')
     await dialog_manager.reset_stack()

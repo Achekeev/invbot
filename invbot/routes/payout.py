@@ -11,6 +11,7 @@ from aiogram_dialog import Window, Dialog, DialogManager, StartMode
 from aiogram_dialog.widgets.text import Const, Format
 from aiogram_dialog.widgets.kbd import Select, ScrollingGroup, Checkbox
 from aiogram_dialog.widgets.input import MessageInput
+from aiogram.filters.command import Command
 import aiohttp
 from ..db.models import Setting, User, Transaction
 from ..db.repo import ExtRepo, TransactionRepo
@@ -239,7 +240,7 @@ account_screen_win = Window(
 
 dialog = Dialog(ext_win, currency_select_win, account_screen_win, amount_input_win, tip_input_win, wallet_address_win)
 
-#@router.message(Command('payin'))
+@router.message(Command('payin'))
 async def payout_cmd(msg: Message, state: FSMContext, dialog_manager: DialogManager, command: CommandObject, session: AsyncSession, user: User):
     # if dialog_manager.has_context():
     #     await dialog_manager.done()

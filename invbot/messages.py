@@ -248,7 +248,7 @@ class Messages:
     def payout_tip(value: bool) -> str:
         if value:
             return 'Оставить чаевые: Да'
-        return 'Очтавить чаевые: Нет'
+        return 'Оставить чаевые: Нет'
 
     @staticmethod
     def payout_select_currency() -> str:
@@ -384,7 +384,7 @@ class Messages:
     @staticmethod
     def start_help():
         return (
-            '<b>Для регистрации в клубе необходимо:</b>\n'
+            '<b>Для регистрации в приложении необходимо:</b>\n'
             'а) в строку ID клуба введите 708 708\n'
             'б) в строку ID агента введите ID вашего агента (обязательно)\n'
             'в) в случае если у вас нет агента, перейдите в «связаться с кассой» для получения действующего ID.\n'
