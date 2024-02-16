@@ -19,9 +19,9 @@ class AdminFilter(Filter):
             logger.info('admin access granted for admin group: %d', chat.id)
             return True # chat is admins group
         
-        if tg_user and tg_user.id and tg_user.id in [a.user_id for a in admins]:
-            logger.info('admin access granted for user: %d', tg_user.id)
-            return True
+        # if tg_user.id in [a.user_id for a in admins]:
+        #     logger.info('admin access granted for user: %d', tg_user.id)
+        #     return True
         logger.info('admin access denied')
         return False
 

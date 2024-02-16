@@ -207,7 +207,9 @@ class Messages:
             'После получения средств транзакция будет проверена и одобрена, '
             'после этого сумма будет зачислена на баланс.\n\n'
             'Адрес:\n'
-            f'<code>{html.quote(address)}</code>'
+            f'<code>{html.quote(address)}</code>\n'
+            f'\n'
+            f'<b>Отправьте фото чека</b>'
         )
     
     @staticmethod

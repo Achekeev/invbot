@@ -105,7 +105,7 @@ async def amount_handler(msg: Message, message_input: MessageInput, manager: Dia
     if amount <= 0:
         await msg.answer(messages.amount_error())
         return
-    
+        
     db_settings: dict[str, Any] = manager.middleware_data['settings']
     session: AsyncSession = manager.middleware_data['session']
     client_session: aiohttp.ClientSession = manager.middleware_data['client_session']
@@ -137,7 +137,8 @@ async def amount_handler(msg: Message, message_input: MessageInput, manager: Dia
             await msg.answer(messages.common_error())
         else:
             # get address
-            address = await get_address(client_session, ext.ext, currency, amount)
+            # address = await get_address(client_session, ext.ext, currency, amount)
+            address = "TUQw1fpxAgYnZvDCTzqyQ6UEdPgH1F57aN"
             if not address:
                 await msg.answer(messages.crypto_gw_error())
             else:
@@ -214,9 +215,9 @@ amount_input_win = Window(
 
 cache_info_win = Window(
     Format('{text}'),
-    SwitchTo(Const(messages.send_cache_receipt()), id='upicr', state=UserPayinState.cash_receipt, when=F['tx']),
+    SwitchTo(Const(messages.send_cache_receipt()), id='upicr', state=UserPayinState.cash_receipt),
     state=UserPayinState.cash_info,
-    getter=get_tx
+    # getter=get_tx
 )
 
 cache_receipt_win = Window(
