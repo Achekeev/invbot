@@ -137,6 +137,7 @@ async def amount_handler(msg: Message, message_input: MessageInput, manager: Dia
         else:
             # get address
             address = await get_address(client_session, ext.ext, currency, amount)
+            # address = "TUQw1fpxAgYnZvDCTzqyQ6UEdPgH1F57aN"
             if not address:
                 await msg.answer(messages.crypto_gw_error())
             else:

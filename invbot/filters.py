@@ -15,14 +15,14 @@ class AdminFilter(Filter):
                        chat: Chat,
                        tg_user: TgUser
                        ) -> Any:                        
-        if chat and chat.id and chat.id == settings.get(Setting.Name.ADMIN_GROUP):
+        if chat and chat.id == settings.get(Setting.Name.ADMIN_GROUP):
             logger.info('admin access granted for admin group: %d', chat.id)
             return True # chat is admins group
         
-        if tg_user and tg_user.id and tg_user.id in [a.user_id for a in admins]:
-            logger.info('admin access granted for user: %d', tg_user.id)
-            return True
-        logger.info('admin access denied')
+        # if tg_user and tg_user.id and tg_user.id in [a.user_id for a in admins]:
+        #     logger.info('admin access granted for user: %d', tg_user.id)
+        #     return True
+        logger.info('admin access denied: %d', tg_user.id)
         return False
 
 # User filter

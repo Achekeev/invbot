@@ -9,8 +9,9 @@ from aiogram.fsm.state import State, StatesGroup
 from aiogram.exceptions import TelegramAPIError
 from aiogram_dialog import DialogManager
 from aiogram.fsm.context import FSMContext
+from sqlalchemy import select
 from ..db import AsyncSession
-from ..db.models import Setting, User
+from ..db.models import Setting, User, Ext
 from ..db.repo import SettingsRepo
 from ..callbacks import HelpData
 from ..filters import UserFilter
@@ -115,7 +116,7 @@ async def help_question(msg: Message, bot: Bot, user: User, state: FSMContext, s
             )
         except TelegramAPIError as ex:
             logger.error("can't send notification to admins group: %s", ex)
-            #TODO: add message of error to user
+            await msg.answer("В данное время сервис недоступен.")
         else:
             await msg.answer(
                 _('Ваш вопрос передан администратору, в ближайшее время Вам придет ответ.')

@@ -36,7 +36,7 @@ DB_URL         = env.get('DB_URL', "sqlite+aiosqlite:///data/bot.sqlite")
 REDIS_URL      = env.get('REDIS_URL')
 REDIS_LIFETIME = int(env.get('REDIS_LIFETIME', 7*24*3600))
 
-LOGLEVEL      = env.get('LOGLEVEL', 'INFO')
+LOGLEVEL      = env.get('LOGLEVEL', 'DEBUG')
 SQL_LOG_LEVEL = env.get('LOGLEVEL', 'WARN')
 
 # predefined admins (not implemented)
@@ -49,3 +49,4 @@ DATE_FORMAT = '%d.%m.%Y'
 DATETIME_FORMAT = '%d.%m.%Y %H:%M:%S'
 
 EXT_ID_LIST_SIZE = 100
+# 'USDT-TRC20'
